@@ -1,0 +1,32 @@
+{
+    "vhosts": [
+      {
+        "name": "melon_vhost"
+      }
+    ],
+    "queues": [
+      {
+        "name": "melon_queue",
+        "vhost": "melon_vhost",
+        "durable": true
+      }
+    ],
+    "exchanges": [
+      {
+        "name": "melon_exchange",
+        "vhost": "melon_vhost",
+        "type": "direct",
+        "durable": true
+      }
+    ],
+    "bindings": [
+      {
+        "source": "melon_exchange",
+        "vhost": "melon_vhost",
+        "destination": "melon_queue",
+        "destination_type": "queue",
+        "routing_key": "melon_routing_key"
+      }
+    ]
+  }
+  
